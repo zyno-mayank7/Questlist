@@ -1,0 +1,27 @@
+# Room Database, Entities, and DAOs
+-keep class com.mayank.questlist.data.** { *; }
+-keep @androidx.room.Entity class * { *; }
+-keep @androidx.room.Dao interface * { *; }
+-keep @androidx.room.Database class * { *; }
+-dontwarn androidx.room.paging.**
+
+# Manifest-declared Services, Receivers & Scheduler components
+-keep class com.mayank.questlist.overlay.OverlayService { *; }
+-keep class com.mayank.questlist.overlay.OverlayLifecycleOwner { *; }
+-keep class com.mayank.questlist.scheduler.ReminderReceiver { *; }
+-keep class com.mayank.questlist.scheduler.MarkDoneReceiver { *; }
+-keep class com.mayank.questlist.scheduler.BootReceiver { *; }
+-keep class com.mayank.questlist.scheduler.MidnightReceiver { *; }
+-keep class com.mayank.questlist.scheduler.NotificationHelper { *; }
+-keep class com.mayank.questlist.scheduler.AlarmScheduler { *; }
+
+# Kotlin Coroutines
+-keepclassmembers class kotlinx.coroutines.** { *; }
+-keep class kotlinx.coroutines.android.** { *; }
+-keepclassmembers class * extends kotlinx.coroutines.AbstractCoroutine { *; }
+-dontwarn kotlinx.coroutines.**
+
+# Compose UI & ViewModels
+-keep class androidx.compose.** { *; }
+-keepclassmembers class * extends androidx.lifecycle.ViewModel { *; }
+-keepclassmembers class * implements androidx.lifecycle.ViewModelProvider$Factory { *; }
